@@ -22,7 +22,7 @@ class DatasetEmbedder:
         Creates embeddings for the questions and saves the dataset
         '''
         self.embeddings = []
-        for question, answer in tqdm(self._dataset):
+        for question in tqdm(self._dataset):
             embedded_question = self.model.get_embedding(np.array([question]))[0].tolist()
             self.embeddings.append(embedded_question)
 
